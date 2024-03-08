@@ -14,6 +14,8 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 
 const port = process.env.PORT || 5000;
 
+ 
+
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -38,6 +40,7 @@ const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
+// app.get("./test", console.log('testdo'))
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
