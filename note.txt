@@ -1,0 +1,20 @@
+api make process
+1-npm init -y
+npm add express mongoose donenv multer
+than:-create cluster in mangodb:-
+
+index.js declear
+add nodemon
+connect database
+***after that we create router amd models folder***
+for router
+a User.js in model
+user.js in routrer file
+
+schema declear for each in model folder 
+-reuter folder
+in this router we declear auth rout catagory route (create api link URL)
+THIS ROUTER DCLREAR IN INDEX folder
+
+ 
+

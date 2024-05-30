@@ -9,10 +9,10 @@ const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 dotenv.config();
-app.use(express.json());
+app.use(express.json()); //you can send any json file json object
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
  
 

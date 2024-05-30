@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
 //REGISTER
+//if u use async function so  you need to use try catch method
 router.post("/register", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
@@ -27,7 +28,7 @@ router.post("/login", async (req, res) => {
     !user && res.status(400).json("Wrong credentials!");
 
     const validated = await bcrypt.compare(req.body.password, user.password);
-    !validated && res.status(400).json("Wrong  credentials!");
+    !validated && res.status(400).json("Wrong credentials!");
 
     const { password, ...others } = user._doc;
     res.status(200).json(others);
