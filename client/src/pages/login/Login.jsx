@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <div className="login">
-      <span className="loginTitle">Login</span>
+      <span className="loginTitle">Login </span>
       <form className="loginForm" onSubmit={handleSubmit}>
         <label>Username</label>
         <input
