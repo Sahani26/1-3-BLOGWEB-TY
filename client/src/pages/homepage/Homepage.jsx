@@ -13,7 +13,7 @@ const {search} = useLocation();
 // console.log(location)
   useEffect(() => {
     const fatchPosts = async () => {
-      const res = await axios.get("/posts"+search)
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/posts`+search)
       setPost(res.data)
     }
     fatchPosts()
