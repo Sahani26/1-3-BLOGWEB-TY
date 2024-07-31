@@ -16,7 +16,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: `${process.env.FRONT}`
 }));
 
 mongoose.connect(process.env.MONGO_URL, {
