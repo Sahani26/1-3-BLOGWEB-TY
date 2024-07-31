@@ -27,7 +27,7 @@ export default function Write() {
       } catch (err) {}
     }
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/posts`, newPost);
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/posts`, newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
