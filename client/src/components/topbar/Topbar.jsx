@@ -6,7 +6,7 @@ import "./topbar.css";
 
 export default function Topbar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = `${process.env.REACT_APP_BACKEND_URL}/api/images/`
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
