@@ -6,6 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
+const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
 dotenv.config();
@@ -14,7 +15,9 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 
 const port = process.env.PORT || 3000;
 
- 
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
@@ -41,10 +44,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 // app.get("./test", console.log('testdo'))
-app.use("/auth", authRoute);
-app.use("/users", userRoute);
-app.use("/posts", postRoute);
-app.use("/categories", categoryRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
 
 app.listen(port, () => {
   console.log(`Backend is running on port ${port}`);
