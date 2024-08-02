@@ -12,6 +12,7 @@ const path = require("path");
 dotenv.config();
 app.use(express.json()); //you can send any json file json object
 app.use("/images", express.static(path.join(__dirname, "/images")))
+  
 
 const port = process.env.PORT || 3000;
 

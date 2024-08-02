@@ -28,8 +28,10 @@ export default function Login() {
 
   return (
     <div className="login">
+      
       <span className="loginTitle">Login </span>
       <form className="loginForm" onSubmit={handleSubmit}>
+        <p>Hint:username:test, pass:123</p>
         <label>Username</label>
         <input
           type="text"
