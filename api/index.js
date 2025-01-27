@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URL, {
   // useCreateIndex: true,
   // useFindAndModify:true,
 }).then(() => {
-  console.log("Connected to MongoDB");
+  console.log("Connected to o MongoDB");
 }).catch((error) => {
   console.error("MongoDB connection failed:", error.message);
 });
