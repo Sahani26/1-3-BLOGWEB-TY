@@ -16,9 +16,17 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 
 const port = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: `${process.env.FRONT}`
-}));
+// app.use(cors({
+//   origin: `${process.env.FRONT}`
+// }));
+app.use(
+  cors({
+    origin: 'https://1-3-blogweb-front-git-main-sahani26s-projects.vercel.app', // Allow specific origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+    credentials: true, // Allow credentials if needed
+  })
+);
+
 
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
